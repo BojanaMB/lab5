@@ -7,6 +7,6 @@
 	<import resource="classpath:/ctx/bean-config.xml" />
 	
 	<!-- Persistence -->
-	<!-- <import resource="classpath:/ctx/persistence-config.xml"/> -->
+	<!--<import resource="classpath:/ctx/persistence-config.xml"/> -->
 
 </beans>
