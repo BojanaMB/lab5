@@ -28,11 +28,13 @@ public class Category extends AbstractEntity{
     public long getId() {
         return super.getId(); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     public Category(String name, List<Question> questions) {
         this.name = name;
         this.questions = questions;
     }
+    
+    
 
     public List<Question> getQuestions() {
         return questions;

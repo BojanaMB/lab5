@@ -14,19 +14,16 @@ import java.util.Date;
  */
 public class Test extends AbstractEntity{
     private Date createDate;
-    private String name;
     private String created_by;
-
+    private String name;
     public Test() {
     }
 
-    public Test(Date createDate, String name, String created_by) {
+    public Test(Date createDate, String created_by, String name) {
         this.createDate = createDate;
-        this.name = name;
         this.created_by = created_by;
+        this.name = name;
     }
-
-
 
     public String getCreated_by() {
         return created_by;

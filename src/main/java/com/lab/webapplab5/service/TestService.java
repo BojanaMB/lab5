@@ -12,6 +12,6 @@ import java.util.List;
  *
  * @author b.radomirovic
  */
-public interface TestService extends AbstractService{
+public interface TestService extends AbstractService<Test>{
     
 }

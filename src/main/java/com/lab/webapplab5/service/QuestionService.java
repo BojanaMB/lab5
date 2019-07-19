@@ -13,6 +13,6 @@ import java.util.List;
  * @author b.radomirovic
  */
 
-public interface QuestionService extends AbstractService{
+public interface QuestionService extends AbstractService<Question>{
    
 }

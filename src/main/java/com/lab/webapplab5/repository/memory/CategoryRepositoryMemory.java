@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author b.radomirovic
  */
-@Repository
+//@Repository
 public class CategoryRepositoryMemory implements CategoryRepository{
     
     private List<Category> lista=new ArrayList<>();

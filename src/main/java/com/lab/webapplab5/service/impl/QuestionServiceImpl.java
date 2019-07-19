@@ -6,7 +6,9 @@
 package com.lab.webapplab5.service.impl;
 
 import com.lab.webapplab5.model.AbstractEntity;
+import com.lab.webapplab5.model.Answer;
 import com.lab.webapplab5.model.Question;
+import com.lab.webapplab5.repository.QuestionRepository;
 import com.lab.webapplab5.service.QuestionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,26 +22,38 @@ import org.springframework.stereotype.Service;
 @Service
 public class QuestionServiceImpl implements QuestionService{
 
+    @Autowired
+    QuestionRepository questionRepository;
     
     @Override
-    public AbstractEntity findById(Long id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Question findById(Long id) {
+        return questionRepository.findById(id);
     }
 
     @Override
     public List findAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return questionRepository.findAll();
     }
 
     @Override
-    public AbstractEntity save(AbstractEntity t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Question save(Question t) throws Exception{
+        List<Answer>answers=t.getAnswers();
+        if(answers.size()<4) throw new Exception("Pitanje mora imati 4 odgovora!");
+        
+        int nasaoTacan=0;
+        for (Answer answer : t.getAnswers()) {
+            if(answer.isCorrect()) nasaoTacan++;
+        }
+        
+        if(nasaoTacan==0 || nasaoTacan>1) throw new Exception("Pitanje mora imati 1 tacan odgovor!");
+        
+        return questionRepository.save(t);
     }
 
     @Override
-    public void remove(AbstractEntity t) throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void remove(Question t) throws IllegalArgumentException {
+        questionRepository.remove(t);
     }
-    
+   
    
 }

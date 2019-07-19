@@ -34,12 +34,12 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public Category save(Category t) {
+    public Category save(Category t) throws Exception{
         return categoryRepository.save(t);
     }
 
     @Override
     public void remove(Category t) throws IllegalArgumentException {
-        categoryRepository.save(t);
+        categoryRepository.remove(t);
     }
 }

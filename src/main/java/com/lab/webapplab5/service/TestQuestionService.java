@@ -5,10 +5,12 @@
  */
 package com.lab.webapplab5.service;
 
+import com.lab.webapplab5.model.TestQuestion;
+
 /**
  *
  * @author b.radomirovic
  */
-public interface TestQuestionService extends AbstractService{
+public interface TestQuestionService extends AbstractService<TestQuestion>{
     
 }

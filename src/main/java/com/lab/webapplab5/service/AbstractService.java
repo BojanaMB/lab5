@@ -16,7 +16,7 @@ public interface AbstractService<T extends AbstractEntity> {
     
     T findById(Long id);
     List<T> findAll();
-    T save(T t);
+    T save(T t) throws Exception;
     
     void remove(T t) throws IllegalArgumentException;
 }
