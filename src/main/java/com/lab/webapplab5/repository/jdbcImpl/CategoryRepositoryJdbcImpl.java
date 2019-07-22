@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -36,7 +38,7 @@ public class CategoryRepositoryJdbcImpl implements CategoryRepository{
     
     
     @Override
-    public Category findById(Long id) {
+    public Category findById(Long id) {      
        return this.jdbcTemplate.queryForObject("select * from category where id=?",new Object[] { id }, new CategoryMapper());
     }
 
@@ -48,6 +50,7 @@ public class CategoryRepositoryJdbcImpl implements CategoryRepository{
     @Override
     public Category save(Category e) {
         jdbcTemplate.update("replace into category (name) values (?)", e.getName());
+        //Category cat=jdbcTemplate.find
         return e;
     }
 

@@ -15,8 +15,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @Configuration
 @ComponentScan(basePackages = {
-    "com.lab.webapplab5.repository","com.lab.webapplab5.service"
-})
+    "com.lab.webapplab5.repository","com.lab.webapplab5.service"})
 @ImportResource({"classpath:ctx/persistence-config.xml"})
 public class ApplicationConf {
     
