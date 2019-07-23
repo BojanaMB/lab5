@@ -6,26 +6,30 @@
 package com.lab.webapplab5.service.impl;
 
 import com.lab.webapplab5.model.AbstractEntity;
+import com.lab.webapplab5.model.Answer;
 import com.lab.webapplab5.model.Category;
+import com.lab.webapplab5.model.Question;
 import com.lab.webapplab5.repository.CategoryRepository;
 import com.lab.webapplab5.service.CategoryService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author b.radomirovic
  */
 @Service
+@Transactional
 public class CategoryServiceImpl implements CategoryService{
     @Autowired
     CategoryRepository categoryRepository;
 
     @Override
     public Category findById(Long id) {
-        return categoryRepository.findById(id);
+        return categoryRepository.getOne(id);
     }
 
     @Override
@@ -40,6 +44,7 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public void remove(Category t) throws IllegalArgumentException {
-        categoryRepository.remove(t);
+        categoryRepository.delete(t);
     }
+    
 }

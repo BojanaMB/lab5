@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author b.radomirovic
  */
-public interface AbstractService<T extends AbstractEntity> {
+public interface AbstractService<T> {
     
     T findById(Long id);
     List<T> findAll();

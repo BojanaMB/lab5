@@ -17,27 +17,28 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  *
  * @author b.radomirovic
  */
 @RestController
-@RequestMapping(value="categoryController")
+@RequestMapping(value="/categoryController",headers="Accept=*/*")
 public class CategoryController {
     @Autowired
     CategoryService categoryService;
     
-    @RequestMapping(value="/categories", headers="Accept=*/*",method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON})
+    @RequestMapping(value="/categories",method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON})
     public List<Category> findAll()
     {
         //ModelAndView model=new ModelAndView();
@@ -52,7 +53,6 @@ public class CategoryController {
 //        model.setViewName("index");
         return category;
     }
-    
     @PostMapping(value="/save",produces = {MediaType.APPLICATION_JSON},consumes ={MediaType.APPLICATION_JSON} )
     public @ResponseBody Category saveCategory(@RequestBody Category category)
     {
@@ -65,10 +65,11 @@ public class CategoryController {
         }
         return null;
     }
-    
+    @Transactional
     @RequestMapping(value="/find/{id}",method=RequestMethod.GET,produces = {MediaType.APPLICATION_JSON})
-    public @ResponseBody Category findById(@PathVariable("id") long id)
+    public Category findById(@PathVariable("id") long id)
     {
-        return categoryService.findById(id);
+        Category category = categoryService.findById(id);
+        return category;
     }
 }

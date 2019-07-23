@@ -7,7 +7,7 @@ package com.lab.webapplab5.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Import;
 
 /**
  *
@@ -15,8 +15,9 @@ import org.springframework.context.annotation.ImportResource;
  */
 @Configuration
 @ComponentScan(basePackages = {
-    "com.lab.webapplab5.repository","com.lab.webapplab5.service"})
-@ImportResource({"classpath:ctx/persistence-config.xml"})
+    "com.lab.webapplab5.service","com.lab.webapplab5.repository"})
+//@ImportResource({"classpath:ctx/persistence-config.xml"})
+@Import(value = JpaConfig.class)
 public class ApplicationConf {
     
 }

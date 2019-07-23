@@ -6,14 +6,19 @@
 package com.lab.webapplab5.model;
 
 import java.io.Serializable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author b.radomirovic
  */
-public abstract class AbstractEntity implements Serializable{
+
+public abstract class AbstractEntity implements Serializable,JpaRepository<Object, Object>{
     
-    private long id;
+    protected long id;
 
     public long getId() {
         return id;

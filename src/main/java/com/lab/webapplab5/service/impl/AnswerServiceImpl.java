@@ -12,6 +12,7 @@ import com.lab.webapplab5.service.AnswerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -24,7 +25,7 @@ public class AnswerServiceImpl implements AnswerService{
 
     @Override
     public Answer findById(Long id) {
-        return answerRepository.findById(id);
+        return answerRepository.getOne(id);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class AnswerServiceImpl implements AnswerService{
 
     @Override
     public void remove(Answer t) throws IllegalArgumentException {
-        answerRepository.remove(t);
+        answerRepository.delete(t);
     }
  
 }

@@ -12,6 +12,7 @@ import com.lab.webapplab5.service.TestService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -24,7 +25,7 @@ public class TestServiceImpl implements TestService{
 
     @Override
     public Test findById(Long id) {
-        return testRepository.findById(id);
+        return testRepository.getOne(id);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class TestServiceImpl implements TestService{
 
     @Override
     public void remove(Test t) throws IllegalArgumentException {
-        testRepository.remove(t);
+        testRepository.delete(t);
     }
 
 }
