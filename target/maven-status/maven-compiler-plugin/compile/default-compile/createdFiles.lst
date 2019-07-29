@@ -18,6 +18,7 @@ com\lab\webapplab5\configuration\SecurityWebInitializer.class
 com\lab\webapplab5\configuration\ApplicationConf.class
 com\lab\webapplab5\service\AbstractService.class
 com\lab\webapplab5\service\impl\QuestionServiceImpl.class
+com\lab\webapplab5\aspect\LoggingAspect.class
 com\lab\webapplab5\service\AnswerService.class
 com\lab\webapplab5\repository\TestRepository.class
 com\lab\webapplab5\controller\QuestionController.class

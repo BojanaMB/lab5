@@ -1,0 +1,35 @@
+[33mcommit 1e1c8cd8ec784826da60139760c2bdc59f255107[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Bojana <bojanaradomirovic2@gmail.com>
+Date:   Mon Jul 29 09:21:12 2019 +0200
+
+    Dodat security za pristup oderedjenim URL-ovima, kao i razliciti nivoi pristupa
+
+[33mcommit e6c48e24f521956078b2bf442437bcbee9e0bdb4[m
+Author: Bojana <bojanaradomirovic2@gmail.com>
+Date:   Tue Jul 23 15:54:17 2019 +0200
+
+    Spring Data
+
+[33mcommit 9d94f5a3ff9844ee6805ac165ef9bbe654036063[m
+Author: Bojana <bojanaradomirovic2@gmail.com>
+Date:   Mon Jul 22 10:32:10 2019 +0200
+
+    Napravljeni rest controlleri za Category, testiranje iz postmana, vise se ne koristi Spring MVC
+
+[33mcommit 432bba78db753997de97d40444e57dcb8a6a7acf[m
+Author: Bojana <bojanaradomirovic2@gmail.com>
+Date:   Fri Jul 19 15:00:29 2019 +0200
+
+    zavrsena jdbc konekcija na bazu i napravljen spring mvc
+
+[33mcommit a0b3c8472eb934cfb7665037aeae6ee332b7a9d0[m
+Author: Bojana <bojanaradomirovic2@gmail.com>
+Date:   Wed Jul 17 16:57:38 2019 +0200
+
+    Logger u mainu -> app nije web i in memory je
+
+[33mcommit 0ed5bcfdad1a68235ee5875371872d1fbeb27b6b[m
+Author: Bojana <bojanaradomirovic2@gmail.com>
+Date:   Wed Jul 17 14:55:17 2019 +0200
+
+    Prvi commit
